@@ -23,8 +23,10 @@ data(pie_crab) # extracting pie crab data set from lter data sampler
 #| label: latitude size plot
 ggplot(data = pie_crab, # pie data set to plot
        aes(x = latitude, # x-axis is latitude
-           y = size)) + # y-axis is crab size
-  geom_point() # creating a scatter plot
+           y = size, # y-axis is crab size
+           color = site)) + # color by site
+  geom_point() + # creating a scatter plot
+  theme_minimal()  #changing theme
+  
+
 ```
-
-
