@@ -10,6 +10,7 @@ date: "2026-02-18"
 
 ```{r}
 #| label: set up chunk
+#| message: false
 library(tidyverse) # general use for data wrangling, cleaning, etc.
 library(lterdatasampler) # package with lter data sets
 
@@ -20,8 +21,10 @@ data(pie_crab) # extracting pie crab data set from lter data sampler
 
 ```{r}
 #| label: latitude size plot
-ggplot(data = pie_crab,
-       aes(x = latitude,
-           y = size)) +
-  geom_point()
+ggplot(data = pie_crab, # pie data set to plot
+       aes(x = latitude, # x-axis is latitude
+           y = size)) + # y-axis is crab size
+  geom_point() # creating a scatter plot
 ```
+
+
