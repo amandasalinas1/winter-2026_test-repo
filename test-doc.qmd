@@ -7,3 +7,21 @@ date: "2026-02-18"
 ---
 
 ## 
+
+```{r}
+#| label: set up chunk
+library(tidyverse) # general use for data wrangling, cleaning, etc.
+library(lterdatasampler) # package with lter data sets
+
+data(pie_crab) # extracting pie crab data set from lter data sampler
+```
+
+# Exploratory visualization
+
+```{r}
+#| label: latitude size plot
+ggplot(data = pie_crab,
+       aes(x = latitude,
+           y = size)) +
+  geom_point()
+```
