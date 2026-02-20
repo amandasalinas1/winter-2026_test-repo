@@ -13,7 +13,9 @@ date: "2026-02-18"
 #| message: false
 library(tidyverse) # general use for data wrangling, cleaning, etc.
 library(lterdatasampler) # package with lter data sets
-
+library(paletteer)
+library(calecopal)
+library(viridis)
 data(pie_crab) # extracting pie crab data set from lter data sampler
 ```
 
@@ -26,7 +28,8 @@ ggplot(data = pie_crab, # pie data set to plot
            y = size, # y-axis is crab size
            color = site)) + # color by site
   geom_point() + # creating a scatter plot
-  theme_minimal()  #changing theme
-  
+  theme_minimal() + #changing theme
+  scale_color_viridis(discrete=TRUE, 
+                      option="plasma")
 
 ```
